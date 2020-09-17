@@ -9,3 +9,23 @@ Use this file to write an "open" version of the game (no test code or defined fo
 
 '''
 # Collaborators: 
+import random
+
+x = random.randint(0,10)
+
+def function():
+    y = int(input("Choose a number."))
+
+    if y == x:
+        print("You got the right answer!")
+    
+    if y < x:
+        print("Your number was too low, pick higher!")
+        function()
+    if y > x:
+        print("Your number was too high, pick lower!")
+        function()
+
+function()
+
+
