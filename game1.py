@@ -8,7 +8,8 @@ Use this file to write an "open" version of the game (no test code or defined fo
 "I'm sorry, you are out of guesses."
 
 '''
-# Collaborators: 
+# Collaborators: Jonah helped me a little bit by checking my code 
+
 import random
 
 x = random.randint(0,10)
