@@ -12,20 +12,33 @@ Use this file to write an "open" version of the game (no test code or defined fo
 
 import random
 
-x = random.randint(0,10)
+x = random.randint(1,10)
 
 def function():
-    y = int(input("Choose a number."))
+    guesses = 0
+    try:
+        y = int(input("Choose a number or press q to quit."))
 
-    if y == x:
-        print("You got the right answer!")
+        while _quit == q:
+            break
+        if y == x:
+            print("You got the right answer!")
     
-    if y < x:
-        print("Your number was too low, pick higher!")
+        if y < x:
+            print("Your number was too low, pick higher!")
+            guesses = guesses + 1
+            function()
+        if y > x:
+            print("Your number was too high, pick lower!")
+            guesses = guesses + 1
+            function()
+
+        if guesses == 5:
+            print("You are out of Guesses.")
+    except:
+        print("Please put in a number from 1-10")
         function()
-    if y > x:
-        print("Your number was too high, pick lower!")
-        function()
+    
 
 function()
 
