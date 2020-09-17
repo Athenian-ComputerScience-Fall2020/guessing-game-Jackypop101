@@ -17,18 +17,19 @@ x = random.randint(1,10)
 def function():
     guesses = 0
     try:
-        y = int(input("Choose a number or press q to quit."))
+        y = (input("Choose a number or press q to quit."))
 
-        while _quit == q:
-            break
-        if y == x:
+        if y == (q):
+            quit
+
+        if int(y) == x:
             print("You got the right answer!")
     
-        if y < x:
+        if int(y) < x:
             print("Your number was too low, pick higher!")
             guesses = guesses + 1
             function()
-        if y > x:
+        if int(y) > x:
             print("Your number was too high, pick lower!")
             guesses = guesses + 1
             function()
