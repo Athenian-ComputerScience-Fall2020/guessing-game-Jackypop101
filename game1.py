@@ -16,27 +16,28 @@ x = random.randint(1,10)
 
 def function():
     guesses = 0
-    y = (input("Choose a number or press q to quit."))
+    y = (input("Choose a number or press break to stop."))
 
-    if y == ('q'):
-        quit
+    while y != ("break"):
+        if int(y) == x:
+            print("You got the right answer!")
+        
+        if int(y) < x:
+            print("Your number was too low, pick higher!")
+            guesses = guesses + 1
+            function()
 
-    if int(y) == x:
-        print("You got the right answer!")
-    
-    if int(y) < x:
-        print("Your number was too low, pick higher!")
-        guesses = guesses + 1
-        function()
-    if int(y) > x:
-        print("Your number was too high, pick lower!")
-        guesses = guesses + 1
-        function()
+        if int(y) > x:
+            print("Your number was too high, pick lower!")
+            guesses = guesses + 1
+            function()
 
-    if guesses == 5:
-        print("You are out of Guesses.")
-  
-    
+        if guesses == 5:
+            print("You are out of Guesses.")
+
+    if y == ('break'):
+        break
+        
 
 
 
