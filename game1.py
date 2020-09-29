@@ -15,14 +15,19 @@ import random
 
 def function(y,x):
     guesses = 0
-    y = 0
-    while y != ("break"):
+
+    while True:
+
         if y == ('break'):
+            break
+
+        if guesses == 5:
+            print("You are out of guess.")
             break
 
         if int(y) == x:
             print("You got the right answer!")
-            y = (input("Enter a number to guess or enter break to stop."))
+            break
 
         elif int(y) < x:
             print("Your number was too low, pick higher!")
@@ -34,20 +39,18 @@ def function(y,x):
             guesses = guesses + 1
             y = (input("Enter a number to guess or enter break to stop."))
 
-        if guesses == 5:
-            break
-
 a = int(input("Enter the first number of your guessing range:"))
 b = int(input("Enter the second number of your guessing range:"))
-y = (input("Enter a number to guess or enter break to stop."))
+y = input("Enter a number to guess or enter break to stop.")
 x = random.randint(a,b)
 function(y,x)
 
-f = input("You are out of Guesses, enter again to play again.")
+f = input("You are out of Guesses, enter 'again' to play again.")
 if f == ("no"):
     quit()
 elif f == ("again"):
     print("Here we go again")
-    function()
+    y = (input("Enter a number to guess or enter break to stop."))
+    function(y,x)
 
 
