@@ -8,36 +8,40 @@ Use this file to write an "open" version of the game (no test code or defined fo
 "I'm sorry, you are out of guesses."
 
 '''
-# Collaborators: Jonah helped me a little bit by checking my code 
+# Collaborators: Jonah, Bert, and Megan.
 
 import random
 
 
 def function(y,x):
     guesses = 0
+    try:
+        while True:
 
-    while True:
+            if y == ('break'):
+                break
 
-        if y == ('break'):
-            break
+            if guesses == 5:
+                print("You are out of guess.")
+                break
 
-        if guesses == 5:
-            print("You are out of guess.")
-            break
+            if int(y) == x:
+                print("You got the right answer!")
+                break
 
-        if int(y) == x:
-            print("You got the right answer!")
-            break
+            elif int(y) < x:
+                print("Your number was too low, pick higher!")
+                guesses = guesses + 1
+                y = (input("Enter a number to guess or enter break to stop."))
 
-        elif int(y) < x:
-            print("Your number was too low, pick higher!")
-            guesses = guesses + 1
-            y = (input("Enter a number to guess or enter break to stop."))
+            elif int(y) > x:
+                print("Your number was too high, pick lower!")
+                guesses = guesses + 1
+                y = (input("Enter a number to guess or enter break to stop."))
+    except:
+         y = (input("Enter a number to guess or enter break to stop."))
+         function(y,x)
 
-        elif int(y) > x:
-            print("Your number was too high, pick lower!")
-            guesses = guesses + 1
-            y = (input("Enter a number to guess or enter break to stop."))
 
 a = int(input("Enter the first number of your guessing range:"))
 b = int(input("Enter the second number of your guessing range:"))
